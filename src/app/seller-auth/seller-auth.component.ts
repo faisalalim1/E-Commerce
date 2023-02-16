@@ -9,10 +9,13 @@ import { SignUp } from '../data-type';
   styleUrls: ['./seller-auth.component.css']
 })
 export class SellerAuthComponent {
+  showLogin = false;
+  authError:string = '';
+
 
   constructor( private seller:SellerService, private router:Router){}
 
-  showLogin = false;
+  
 
 
   ngOnIt():void{
@@ -28,7 +31,14 @@ export class SellerAuthComponent {
 
   login(data:SignUp):void
   {
-    console.log(data);
+    this.authError = "";
+    // console.log(data);
+    this.seller.userLogin(data);
+    this.seller.isLoginError.subscribe((isError)=>{
+      if(isError){
+        this.authError="Email or password is not correct";
+      }
+    })
     
     
   }

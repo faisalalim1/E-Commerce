@@ -7,44 +7,16 @@
       "id": 1
     },
     {
-      "name": "faisal",
-      "email": "faisal@gmail.com",
-      "password": "123456",
+      "name": "faza",
+      "password": "123",
+      "email": "faisal4all786",
       "id": 2
     },
     {
-      "name": "ram",
-      "password": "123456",
-      "email": "faisal4all786@gmail.com",
+      "name": "faisal",
+      "password": "1234",
+      "email": "faisal4all786",
       "id": 3
-    },
-    {
-      "name": "ravi",
-      "password": "123456",
-      "email": "ravi@gmail.com",
-      "id": 4
-    },
-    {
-      "name": "mohan",
-      "password": "123456",
-      "email": "mohan@gmail.com",
-      "id": 5
-    },
-    {
-      "name": "rohit",
-      "password": "1234567",
-      "email": "faisal4all786@gmail.com",
-      "id": 6
-    },
-    {
-      "email": "faza",
-      "password": "123",
-      "id": 7
-    },
-    {
-      "email": "dasfgh",
-      "password": "234567",
-      "id": 8
     }
   ]
 }
