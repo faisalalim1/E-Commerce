@@ -31,3 +31,13 @@ body{
     flex-direction: column;
     width: 300px;
 }
+
+.carousel-caption{
+    color:#00000082;
+    border-radius: 5px;
+}
+
+.carousel-control-prev-icon,.carousel-control-next-icon{
+    background-color: black;
+    border: 5px;
+}
