@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { product } from '../data-type';
+import { ProductService } from '../services/product.service';
+import { product } from '../data-type';
 // import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-header',
@@ -11,9 +12,9 @@ export class HeaderComponent implements OnInit {
   menuType: string = 'default';
   sellerName:string="";
   userName:string="";
-  // searchResult:undefined|product[];
+  searchResult:undefined|product[];
   cartItems=0;
-  constructor(private route: Router) {}
+  constructor(private route: Router, private product: ProductService) {}
 
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
@@ -49,32 +50,43 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(['/']);
   }
 
+
+
   userLogout(){
     localStorage.removeItem('user');
     this.route.navigate(['/user-auth'])
     // this.product.cartData.emit([])
   }
 
-  // searchProduct(query:KeyboardEvent){
-  //   if(query){
-  //     const element = query.target as HTMLInputElement;
-  //     this.product.searchProduct(element.value).subscribe((result)=>{
+
+  // search product from search bar
+  searchProduct(query:KeyboardEvent){
+    if(query){
+      const element = query.target as HTMLInputElement;
+      this.product.searchProduct(element.value).subscribe((result)=>{
        
-  //       if(result.length>5){
-  //         result.length=length
-  //       }
-  //       this.searchResult=result;
-  //     })
-  //   }
-  // }
-  // hideSearch(){
-  //   this.searchResult=undefined
-  // }
+        if(result.length>5){
+          result.length=length
+        }
+        this.searchResult=result;
+      })
+    }
+  }
+  hideSearch(){
+    this.searchResult=undefined
+  }
+  
   redirectToDetails(id:number){
     this.route.navigate(['/details/'+id])
   }
+
+  // search result and navigate it to the page
   submitSearch(val:string){
     console.warn(val)
   this.route.navigate([`search/${val}`]);
   }
+
+ 
+
+  
 }

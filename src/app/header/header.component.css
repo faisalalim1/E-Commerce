@@ -1,4 +1,17 @@
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: goldenrod;
+  color: #fff;
+  padding: 20px;
+  z-index: 9999; /* This ensures the header is displayed on top of other elements */
+}
+
 .nav {
+  
   display: flex;
   justify-content: space-between;
 }
@@ -20,15 +33,14 @@
     flex: 1;
     color: blueviolet;
     border: 1px solid blueviolet;
-    height: 43px;
+    height: 39px;
     border-right: none;
-    
 }
 
 .nav .nav-search button{
     color: blueviolet;
     border: 1px solid blueviolet;
-    height: 43px;
+    height: 39px;
 }
 
 .nav ul {
@@ -54,36 +66,33 @@ h1 a{
   text-decoration: none;
 }
 
-h1 a{
-  color: blueviolet;
-  text-decoration: none;
-}
-
-.suggested-search{
-  position: absolute;
+.suggested-result{
+  /* position: absolute; */
   top: 40px;
   z-index: 10;
   display: list-item !important;
   border: 1px solid #ddd;
   background-color: #fff;
   width: 300px;
+  margin-top: 30%;
+
+
+  min-width: 572px;
+  top: 52px;
+  position: fixed;
+  text-align: left;
+  left: 412px;
+  display: none;
+
+  
+ 
 }
-.suggested-search li {
+.suggested-result li {
   padding:5px;
   border: 1px solid #ddd;
+  
 }
-.suggested-search li a{
+.suggested-result li a{
   cursor: pointer;
   color: blueviolet;
 }
-
-@media screen and (max-width: 500px) {
-    .nav a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    .nav-search {
-      float: none;
-    }
-  }

@@ -1,11 +1,14 @@
+<!-- popular products on poster -->
 <ngb-carousel *ngIf="popularProducts">
   <ng-template *ngFor="let item of popularProducts" ngbSlide>
     <div class="picsum-img-wrapper">
-      <img
-        class="product-header-image"
-        src="{{ item.URL }}"
-        alt="Random first slide"
-      />
+      <a routerLink="/details/{{ item.id }}">
+        <img
+          class="product-header-image"
+          src="{{ item.URL }}"
+          alt="Random first slide"
+        />
+      </a>
     </div>
     <div class="carousel-caption">
       <h3>{{ item.name }}</h3>
@@ -14,186 +17,31 @@
   </ng-template>
 </ngb-carousel>
 
+<!-- trendy products -->
+
 <div class="product-list-wrapper">
-  <h1>Trendy Products</h1>
+  <!-- <h1>Trendy Products</h1> -->
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-3" *ngFor="let item of trendyProduct">
       <div class="product-item">
-        <img
-          src="https://5.imimg.com/data5/WT/WU/MY-13922529/hp-laptop-500x500.jpg"
-        />
+        <a routerLink="/details/{{ item.id }}">
+          <img src="{{ item.URL }}" />
+        </a>
 
         <div class="product-details">
-          <h6 class="name-head">Hp Laptop</h6>
+          <h6 class="name-head">{{ item.name }}</h6>
           <div class="product-price">
-            <h6>Price:10000</h6>
+            <h6>{{ item.price | currency : "INR" }}</h6>
           </div>
           <div class="product-color">
-            <h6>Color:Black</h6>
+            <h6>color: {{ item.color }}</h6>
           </div>
         </div>
         <div class="product-footer">
-          <a href="#">view details</a>
+          <a routerLink="/details/{{ item.id }}">view details</a>
           <a href="#">Add to cart</a>
         </div>
       </div>
     </div>
-
-    <div class="col-sm-3">
-        <div class="product-item">
-          <img
-            src="https://5.imimg.com/data5/WT/WU/MY-13922529/hp-laptop-500x500.jpg"
-          />
-  
-          <div class="product-details">
-            <h6 class="name-head">Hp Laptop</h6>
-            <div class="product-price">
-              <h6>Price:10000</h6>
-            </div>
-            <div class="product-color">
-              <h6>Color:Black</h6>
-            </div>
-          </div>
-          <div class="product-footer">
-            <a href="#">view details</a>
-            <a href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-3">
-        <div class="product-item">
-          <img
-            src="https://5.imimg.com/data5/WT/WU/MY-13922529/hp-laptop-500x500.jpg"
-          />
-  
-          <div class="product-details">
-            <h6 class="name-head">Hp Laptop</h6>
-            <div class="product-price">
-              <h6>Price:10000</h6>
-            </div>
-            <div class="product-color">
-              <h6>Color:Black</h6>
-            </div>
-          </div>
-          <div class="product-footer">
-            <a href="#">view details</a>
-            <a href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-3">
-        <div class="product-item">
-          <img
-            src="https://5.imimg.com/data5/WT/WU/MY-13922529/hp-laptop-500x500.jpg"
-          />
-  
-          <div class="product-details">
-            <h6 class="name-head">Hp Laptop</h6>
-            <div class="product-price">
-              <h6>Price:10000</h6>
-            </div>
-            <div class="product-color">
-              <h6>Color:Black</h6>
-            </div>
-          </div>
-          <div class="product-footer">
-            <a href="#">view details</a>
-            <a href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-3">
-        <div class="product-item">
-          <img
-            src="https://5.imimg.com/data5/WT/WU/MY-13922529/hp-laptop-500x500.jpg"
-          />
-  
-          <div class="product-details">
-            <h6 class="name-head">Hp Laptop</h6>
-            <div class="product-price">
-              <h6>Price:10000</h6>
-            </div>
-            <div class="product-color">
-              <h6>Color:Black</h6>
-            </div>
-          </div>
-          <div class="product-footer">
-            <a href="#">view details</a>
-            <a href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-3">
-        <div class="product-item">
-          <img
-            src="https://5.imimg.com/data5/WT/WU/MY-13922529/hp-laptop-500x500.jpg"
-          />
-  
-          <div class="product-details">
-            <h6 class="name-head">Hp Laptop</h6>
-            <div class="product-price">
-              <h6>Price:10000</h6>
-            </div>
-            <div class="product-color">
-              <h6>Color:Black</h6>
-            </div>
-          </div>
-          <div class="product-footer">
-            <a href="#">view details</a>
-            <a href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-3">
-        <div class="product-item">
-          <img
-            src="https://5.imimg.com/data5/WT/WU/MY-13922529/hp-laptop-500x500.jpg"
-          />
-  
-          <div class="product-details">
-            <h6 class="name-head">Hp Laptop</h6>
-            <div class="product-price">
-              <h6>Price:10000</h6>
-            </div>
-            <div class="product-color">
-              <h6>Color:Black</h6>
-            </div>
-          </div>
-          <div class="product-footer">
-            <a href="#">view details</a>
-            <a href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-sm-3">
-        <div class="product-item">
-          <img
-            src="https://5.imimg.com/data5/WT/WU/MY-13922529/hp-laptop-500x500.jpg"
-          />
-  
-          <div class="product-details">
-            <h6 class="name-head">Hp Laptop</h6>
-            <div class="product-price">
-              <h6>Price:10000</h6>
-            </div>
-            <div class="product-color">
-              <h6>Color:Black</h6>
-            </div>
-          </div>
-          <div class="product-footer">
-            <a href="#">view details</a>
-            <a href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
-
-      
   </div>
 </div>
