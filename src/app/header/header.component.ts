@@ -37,21 +37,26 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+
+    // storing product in localstorage 
     let cartData= localStorage.getItem('localCart');
     if(cartData){
       this.cartItems= JSON.parse(cartData).length
     }
-    // this.product.cartData.subscribe((items)=>{
-    //   this.cartItems= items.length
-    // })
+    this.product.cartData.subscribe((items)=>{
+      this.cartItems= items.length
+    })
   }
+
+
+  // Logout for seller and navigate tp home page
   logout(){
     localStorage.removeItem('seller');
     this.route.navigate(['/']);
   }
 
 
-
+// logout for user and navigate tp home page
   userLogout(){
     localStorage.removeItem('user');
     this.route.navigate(['/user-auth'])
@@ -79,6 +84,7 @@ export class HeaderComponent implements OnInit {
   redirectToDetails(id:number){
     this.route.navigate(['/details/'+id])
   }
+
 
   // search result and navigate it to the page
   submitSearch(val:string){

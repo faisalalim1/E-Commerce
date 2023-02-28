@@ -12,7 +12,7 @@ export class ProductDetailsComponent {
 
   productData: undefined | product
   productQuantity:number=1;
-
+  removeCart = false;
 
   constructor(private activeRoute:ActivatedRoute ,private product: ProductService ){}
 
@@ -22,6 +22,17 @@ export class ProductDetailsComponent {
     productId &&  this.product.getProduct(productId).subscribe((result)=>{
       console.log(result);
       this.productData = result;
+
+      let cartData = localStorage.getItem('localCart');
+      if(productId && cartData){
+        let items = JSON.parse(cartData);
+        items = items.filter((item:product)=>productId== item.id.toString());
+        if(items.length){
+          this.removeCart = true
+        }else{
+          this.removeCart = false;
+        }
+      }
       
     })
   }
@@ -33,6 +44,25 @@ export class ProductDetailsComponent {
     }else if(this.productQuantity > 1 && val ==='min'){
       this.productQuantity = this.productQuantity-1;
     }
+  }
+
+
+  AddToCart()
+  {
+    if(this.productData){
+      this.productData.quantity = this.productQuantity
+      if(!localStorage.getItem('user')){
+        console.log(this.productData);
+        this.product.localAddToCart(this.productData);
+        this.removeCart = true
+      }
+     
+    }
+  }
+
+  removeToCart(productId:number){
+    this.product.removeItemFromCart(productId);
+    this.removeCart = false;
   }
 
 }

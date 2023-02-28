@@ -29,12 +29,22 @@ header {
   margin-top: 5px;
 }
 
-.nav .nav-search input {
+ .nav-search input {
     flex: 1;
     color: blueviolet;
     border: 1px solid blueviolet;
     height: 39px;
     border-right: none;
+
+
+    /* background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
 }
 
 .nav .nav-search button{
