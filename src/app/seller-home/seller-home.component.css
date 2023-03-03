@@ -21,3 +21,6 @@ img{
 .adjust-update-link{
     margin-left: 15px;
 }
+.delete{
+    cursor: pointer;
+}
