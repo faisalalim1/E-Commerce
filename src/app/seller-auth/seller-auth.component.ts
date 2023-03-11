@@ -9,7 +9,7 @@ import { SignUp } from '../data-type';
   styleUrls: ['./seller-auth.component.css']
 })
 export class SellerAuthComponent {
-  showLogin = false;
+  showLogin = true;
   authError:string = '';
 
 

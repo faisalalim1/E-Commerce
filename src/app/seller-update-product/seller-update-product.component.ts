@@ -36,6 +36,7 @@ export class SellerUpdateProductComponent {
     this.product.updateProduct(data).subscribe((result)=>{
       if(result){
         this.productMessage = 'product has updated'
+        this.ngOnInit();
       }
     });
     setTimeout(()=>{

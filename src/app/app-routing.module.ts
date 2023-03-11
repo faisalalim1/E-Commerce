@@ -22,7 +22,7 @@ const routes: Routes = [
      component:FooterComponent,
   },
   {
-    path:'seller-auth',
+    path:'seller-login',
      component: SellerAuthComponent,
   },
   {

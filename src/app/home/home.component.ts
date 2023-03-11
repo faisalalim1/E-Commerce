@@ -18,13 +18,13 @@ export class HomeComponent {
   ngOnInit(): void{
     //Popular products on poster of home page
     this.product.popularProducts().subscribe((data)=>{
-      console.log(data);
+      // console.log(data);
       this.popularProducts = data;
       
     })
     //Trendy products on home page
     this.product.trendyProduct().subscribe((data)=>{
-      console.log(data);
+      // console.log(data);
       this.trendyProduct = data;
       
     })
