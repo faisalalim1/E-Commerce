@@ -55,6 +55,6 @@ export class CartPageComponent implements OnInit {
   }
 
   checkout() {
-    this.router.navigate(['']);
+    this.router.navigate(['/checkout']);
   }
 }
